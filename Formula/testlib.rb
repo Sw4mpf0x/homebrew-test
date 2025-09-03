@@ -1,16 +1,16 @@
 class Testlib < Formula
     desc "Test Tap Activate"
     homepage "https://github.com/Sw4mpf0x/"
-    url "https://github.com/Sw4mpf0x/homebrew-test/releases/download/v2.74.4/testlib-2.74.4.tar.gz"
-    sha256 "8f7565ad6d5137c4329d53aa762f2fed100ceb74587bf6a54784fcfb1c2943a1"
-    version "2.74.4"
+    url "https://github.com/Sw4mpf0x/homebrew-test/releases/download/v2.74.5/testlib-2.74.5.tar.gz"
+    sha256 "c56ae9941e99d25c70ddcce925adef0c93fbd472dac4ac5fd7eb78c0824546fe"
+    version "2.74.5"
 
     def install
         bin.install Dir["*"]
         Dir["#{bin}/*"].each do |f|
         system "codesign", "--force", "--sign", "-", f if File.file?(f)
         end
-        system "python3 files/install.py"
+        system "python3 #{bin}/install.py"
       end
 
     def caveats
